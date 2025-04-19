@@ -1,52 +1,61 @@
-<!-- Projects / Samples with Filtering -->
-<section id="projects" class="py-16 px-6 max-w-6xl mx-auto" x-data="{ filter: 'all' }">
-  <h2 class="text-3xl font-bold text-center mb-6">Work Samples</h2>
-  <div class="flex justify-center gap-4 mb-8 flex-wrap">
-    <button @click="filter='all'" :class="filter==='all' ? 'bg-blue-600 text-white' : 'border border-blue-600 text-blue-600'" class="px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700">All</button>
-    <button @click="filter='design'" :class="filter==='design' ? 'bg-blue-600 text-white' : 'border border-blue-600 text-blue-600'" class="px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700">Design</button>
-    <button @click="filter='blog'" :class="filter==='blog' ? 'bg-blue-600 text-white' : 'border border-blue-600 text-blue-600'" class="px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700">Blog</button>
-    <button @click="filter='documentary'" :class="filter==='documentary' ? 'bg-blue-600 text-white' : 'border border-blue-600 text-blue-600'" class="px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700">Documentary</button>
-    <button @click="filter='interview'" :class="filter==='interview' ? 'bg-blue-600 text-white' : 'border border-blue-600 text-blue-600'" class="px-4 py-2 rounded-full transition-transform transform hover:scale-105 hover:bg-blue-700">Interview</button>
-  </div>
-  <div class="grid md:grid-cols-2 gap-6">
-    <!-- Gallery cards stay unchanged -->
-    <!-- ... existing content preserved ... -->
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en" x-data="{ currentChannel: 'live' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meenal Vashistha | Multimedia Creator</title>
+    <link href="your-stylesheet.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Meenal Vashistha</h1>
+            <nav>
+                <button @click="currentChannel = 'live'" :class="{'text-blue-600': currentChannel === 'live'}" class="px-3 py-2">Live</button>
+                <button @click="currentChannel = 'design'" :class="{'text-blue-600': currentChannel === 'design'}" class="px-3 py-2">Design Channel</button>
+                <button @click="currentChannel = 'blog'" :class="{'text-blue-600': currentChannel === 'blog'}" class="px-3 py-2">Blog Channel</button>
+                <button @click="currentChannel = 'documentary'" :class="{'text-blue-600': currentChannel === 'documentary'}" class="px-3 py-2">Documentary Channel</button>
+                <button @click="currentChannel = 'interview'" :class="{'text-blue-600': currentChannel === 'interview'}" class="px-3 py-2">Interview Channel</button>
+                <a href="/about" class="px-3 py-2">About Me</a> </nav>
+        </div>
+    </header>
 
-<!-- Skills Section -->
-<section class="py-16 px-6 bg-gray-50">
-  <h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-center">
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Graphic Design</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Video Editing</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Social Media Content Creation</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Proofreading & Editorial</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Copy & Branding</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Digital Storytelling</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Scriptwriting for Short-form Content</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Instagram Reels Creation</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">Voiceover Scripting</p>
-    </div>
-    <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 hover:scale-105">
-      <p class="font-semibold">AI Tool Utilization (e.g. ChatGPT, Canva, MurfAI)</p>
-    </div>
-  </div>
-</section>
+    <main class="max-w-6xl mx-auto py-8 px-6">
+        <section x-show="currentChannel === 'live'">
+            <h2 class="text-3xl font-bold mb-6 text-center">Featured Highlights</h2>
+            <div class="aspect-w-16 aspect-h-9 mb-6">
+                <iframe src="your-intro-video-url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    </div>
+                </div>
+        </section>
+
+        <section x-show="currentChannel === 'design'">
+            <h2 class="text-2xl font-bold mb-4">Design Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+        </section>
+
+        <section x-show="currentChannel === 'blog'">
+            <h2 class="text-2xl font-bold mb-4">Blog Posts</h2>
+            <div class="space-y-4">
+                </div>
+        </section>
+
+        <section x-show="currentChannel === 'documentary'">
+            <h2 class="text-2xl font-bold mb-4">Documentary Features</h2>
+            </section>
+
+        <section x-show="currentChannel === 'interview'">
+            <h2 class="text-2xl font-bold mb-4">Interviews</h2>
+            </section>
+    </main>
+
+    <footer class="bg-gray-200 py-4 text-center text-gray-600">
+        <p>&copy; 2025 Meenal Vashistha</p>
+        </footer>
+</body>
+</html>
