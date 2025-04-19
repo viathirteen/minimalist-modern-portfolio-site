@@ -1,62 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ currentChannel: 'live' }">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meenal Vashistha | Multimedia Creator</title>
-    <link href="your-stylesheet.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <title>Meenal Vashistha | Design-Led Brands</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100">
+
     <header class="bg-white shadow-md py-4 px-6">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Meenal Vashistha</h1>
             <nav>
-                <button @click="currentChannel = 'live'" :class="{'text-blue-600': currentChannel === 'live'}" class="px-3 py-2">Live</button>
-                <button @click="currentChannel = 'design'" :class="{'text-blue-600': currentChannel === 'design'}" class="px-3 py-2">Design Channel</button>
-                <button @click="currentChannel = 'blog'" :class="{'text-blue-600': currentChannel === 'blog'}" class="px-3 py-2">Blog Channel</button>
-                <button @click="currentChannel = 'documentary'" :class="{'text-blue-600': currentChannel === 'documentary'}" class="px-3 py-2">Documentary Channel</button>
-                <button @click="currentChannel = 'interview'" :class="{'text-blue-600': currentChannel === 'interview'}" class="px-3 py-2">Interview Channel</button>
-                <a href="/about" class="px-3 py-2">About Me</a>
+                <a href="#" class="px-3 py-2 hover:text-blue-500">Services</a>
+                <a href="#" class="px-3 py-2 hover:text-blue-500">Portfolio</a>
+                <a href="#" class="px-3 py-2 hover:text-blue-500">About</a>
+                <a href="#" class="px-3 py-2 hover:text-blue-500">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-8 px-6">
-        <section x-show="currentChannel === 'live'">
-            <h2 class="text-3xl font-bold mb-6 text-center">Featured Highlights</h2>
-            <div class="aspect-w-16 aspect-h-9 mb-6">
-                <iframe src="your-intro-video-url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section class="hero bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1583743814966-cbf0300c5940?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container mx-auto text-center text-white py-24">
+            <h1 class="text-4xl font-bold">Design-Led Brands</h1>
+            <p class="text-lg mt-4">We craft future-facing visual identities that blend storytelling, design, and tech—for startups with serious ambition.</p>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full mt-6">Get a Quote</a>
+        </div>
+    </section>
+
+    <section class="services py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Brand Identity</h3>
+                    <p>From logo design to brand guidelines, we help you establish a strong and consistent brand presence.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Web Design</h3>
+                    <p>We create stunning and user-friendly websites that effectively showcase your brand and drive conversions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Digital Marketing</h3>
+                    <p>We help you reach your target audience through strategic social media marketing and online advertising.</p>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+    </section>
+
+    <section class="portfolio py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Our Work</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1501785889320-71c43d45d53c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60&ixly=0" alt="Project 1" class="w-full">
                 </div>
-        </section>
-
-        <section x-show="currentChannel === 'design'">
-            <h2 class="text-2xl font-bold mb-4">Design Portfolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67968e8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60&ixly=0" alt="Project 2" class="w-full">
                 </div>
-        </section>
-
-        <section x-show="currentChannel === 'blog'">
-            <h2 class="text-2xl font-bold mb-4">Blog Posts</h2>
-            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1529150912423-99b08b07292f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60&ixly=0" alt="Project 3" class="w-full">
                 </div>
-        </section>
+            </div>
+        </div>
+    </section>
 
-        <section x-show="currentChannel === 'documentary'">
-            <h2 class="text-2xl font-bold mb-4">Documentary Features</h2>
-            </section>
+    <section class="testimonials py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">What Our Clients Say</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="max-w-md p-6 bg-white rounded-lg shadow-md mx-4">
+                    <p class="text-gray-600">"Meenal and her team were fantastic to work with. They truly understood our vision and brought it to life with stunning results."</p>
+                    <p class="text-gray-500 mt-4">John Doe, CEO of [Client Company]</p>
+                </div>
+                <div class="max-w-md p-6 bg-white rounded-lg shadow-md mx-4">
+                    <p class="text-gray-600">"Meenal's creativity and attention to detail are exceptional. I highly recommend her to anyone looking for a top-notch design partner."</p>
+                    <p class="text-gray-500 mt-4">Jane Doe, Marketing Manager of [Client Company]</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section x-show="currentChannel === 'interview'">
-            <h2 class="text-2xl font-bold mb-4">Interviews</h2>
-            </section>
-    </main>
+    <section class="about py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">About Me</h2>
+            <p class="text-lg">I'm Meenal Vashistha, a passionate and experienced designer with a focus on creating visually stunning and impactful brand experiences. I have a deep understanding of design principles and a strong ability to translate business goals into compelling visual solutions.</p>
+        </div>
+    </section>
 
-    <footer class="bg-gray-200 py-4 text-center text-gray-600">
-        <p>&copy; 2025 Meenal Vashistha</p>
-        </footer>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Meenal Vashistha. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
